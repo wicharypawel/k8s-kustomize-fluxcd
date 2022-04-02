@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pod-info-app
+spec: 
+  ports:
+  - port: 8000
+    targetPort: 9898
+  type: ClusterIP
+  selector:
+    app: pod-info-app
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-info-app
+  labels:
+    app: pod-info-app
+spec:
+  containers:
+  - name: pod-info-app
+    image: stefanprodan/podinfo:unknown
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 9898
+
