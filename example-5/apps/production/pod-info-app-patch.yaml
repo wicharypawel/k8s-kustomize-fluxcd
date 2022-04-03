@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-info-app
+spec:
+  template:
+    spec:
+      containers:
+      - name: pod-info-app
+        image: stefanprodan/podinfo:6.1.1
