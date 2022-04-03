@@ -5,4 +5,4 @@ metadata:
 spec:
   containers:
   - name: pod-info-app
-    image: stefanprodan/podinfo:6.1.1
+    image: stefanprodan/podinfo:6.0.4
